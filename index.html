@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kostadin Radkov</title>
+  <meta name="description" content="Executive CV of Kostadin Radkov — Chief Integrity and Control Officer, iGaming Operations, Compliance, Business Analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
+  <style>
+    /* ─────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --gold:          #b8960c;
+      --gold-lt:       #d4b030;
+      --gold-pale:     #f5edcb;
+      --ink:           #0f0e0b;
+      --ink-80:        #2c2a24;
+      --ink-50:        #7a7770;
+      --ink-20:        #c8c5bc;
+      --paper:         #faf8f4;
+      --paper-warm:    #f3efe6;
+      --paper-card:    #f8f6f1;
+      --divider:       rgba(15,14,11,0.10);
+      --accent-teal:   #005f66;
+      --font-serif:    'Cormorant Garamond', Georgia, serif;
+      --font-sans:     'Inter', 'Helvetica Neue', sans-serif;
+      --r-sm: 3px;
+      --r-md: 6px;
+      --max: 1120px;
+      --transition: 200ms cubic-bezier(0.25,1,0.5,1);
+    }
+    [data-theme="dark"] {
+      --gold:        #d4a820;
+      --gold-lt:     #e8c44a;
+      --gold-pale:   #3a3010;
+      --ink:         #ebe7de;
+      --ink-80:      #cec9bc;
+      --ink-50:      #857f73;
+      --ink-20:      #3c3930;
+      --paper:       #131210;
+      --paper-warm:  #191713;
+      --paper-card:  #1d1b16;
+      --divider:     rgba(255,255,255,0.08);
+      --accent-teal: #4fa9b0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --gold:        #d4a820;
+        --gold-lt:     #e8c44a;
+        --gold-pale:   #3a3010;
+        --ink:         #ebe7de;
+        --ink-80:      #cec9bc;
+        --ink-50:      #857f73;
+        --ink-20:      #3c3930;
+        --paper:       #131210;
+        --paper-warm:  #191713;
+        --paper-card:  #1d1b16;
+        --divider:     rgba(255,255,255,0.08);
+        --accent-teal: #4fa9b0;
+      }
+    }
+
+    /* ─────────────────────────────────────────────
+       BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      background-color: var(--paper);
+      min-height: 100dvh;
+    }
+    h1,h2,h3,h4 { line-height: 1.1; font-weight: 600; }
+    p,li { max-width: 72ch; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+    ul { list-style: none; padding: 0; }
+    img { display: block; max-width: 100%; }
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0; }
+
+    /* ─────────────────────────────────────────────
+       TOPBAR
+    ───────────────────────────────────────────── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: color-mix(in srgb, var(--paper) 90%, transparent);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--divider);
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .wordmark {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+    .wordmark span {
+      color: var(--gold);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn-ghost {
+      height: 38px;
+      padding: 0 1.1rem;
+      border: 1px solid var(--divider);
+      border-radius: var(--r-sm);
+      background: transparent;
+      color: var(--ink-80);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .btn-ghost:hover {
+      background: var(--paper-warm);
+      color: var(--ink);
+      border-color: var(--ink-20);
+    }
+    .btn-download {
+      height: 38px;
+      padding: 0 1.4rem;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--r-sm);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: background var(--transition);
+    }
+    .btn-download:hover { background: var(--ink-80); }
+    .btn-download svg,
+    .btn-ghost svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ─────────────────────────────────────────────
+       LAYOUT SHELL
+    ───────────────────────────────────────────── */
+    .shell {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       MASTHEAD
+    ───────────────────────────────────────────── */
+    .masthead {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--divider);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-end: end;
+    }
+    .masthead-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.6rem, 7vw, 6.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.92;
+      color: var(--ink);
+    }
+    .masthead-name em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .masthead-title {
+      margin-top: 1.6rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-50);
+    }
+    .masthead-title::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      vertical-align: middle;
+      margin-right: 0.75rem;
+    }
+    .masthead-summary {
+      margin-top: 1.8rem;
+      font-size: 1.05rem;
+      color: var(--ink-80);
+      max-width: 58ch;
+      line-height: 1.7;
+    }
+    .masthead-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding-bottom: 0.4rem;
+    }
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--ink-80);
+      font-size: 13.5px;
+    }
+    .meta-row svg {
+      color: var(--gold);
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .meta-row a:hover { color: var(--gold); }
+
+    /* ─────────────────────────────────────────────
+       BODY: 2-COL GRID
+    ───────────────────────────────────────────── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      padding-top: 3.5rem;
+    }
+    .main-col { display: grid; gap: 3rem; }
+    .side-col { display: grid; gap: 2.5rem; align-content: start; }
+
+    /* ─────────────────────────────────────────────
+       SECTION HEADING
+    ───────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--ink-50);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    /* ─────────────────────────────────────────────
+       EXPERIENCE ITEMS
+    ───────────────────────────────────────────── */
+    .experience { display: grid; gap: 2.4rem; }
+    .exp-item {}
+    .exp-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+    .exp-role {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .exp-period {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--ink-50);
+      white-space: nowrap;
+    }
+    .exp-company {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      margin-bottom: 0.85rem;
+    }
+    .exp-list {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .exp-list li {
+      padding-left: 1.1rem;
+      position: relative;
+      color: var(--ink-80);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .exp-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 4px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .exp-divider {
+      margin-top: 2.4rem;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    /* ─────────────────────────────────────────────
+       SIDEBAR BLOCKS
+    ───────────────────────────────────────────── */
+    .sidebar-block {}
+    .sidebar-block + .sidebar-block {
+      padding-top: 2rem;
+      border-top: 1px solid var(--divider);
+    }
+    .side-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-50);
+      margin-bottom: 1.1rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .skill-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      color: var(--ink-80);
+      letter-spacing: 0.04em;
+    }
+    .edu-item { margin-bottom: 1.1rem; }
+    .edu-degree {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .edu-school,
+    .edu-years {
+      font-size: 13px;
+      color: var(--ink-50);
+      letter-spacing: 0.04em;
+    }
+    .cert-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .cert-body,
+    .cert-id {
+      font-size: 13px;
+      color: var(--ink-50);
+      letter-spacing: 0.04em;
+    }
+    .profile-text {
+      font-size: 14px;
+      color: var(--ink-80);
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER STRIP
+    ───────────────────────────────────────────── */
+    .footer-strip {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-note {
+      font-size: 12.5px;
+      color: var(--ink-50);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─────────────────────────────────────────────
+       PRINT / PDF
+    ───────────────────────────────────────────── */
+    .pdf-active .topbar,
+    .pdf-active .footer-strip { display: none !important; }
+    .pdf-active body { background: #fff; }
+    .pdf-active .shell { padding-bottom: 0; }
+
+    @media print {
+      .topbar, .footer-strip { display: none !important; }
+      body { background: #fff; }
+      .shell { padding-bottom: 0; max-width: 100%; }
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .body-grid { grid-template-columns: 1fr; }
+      .side-col { padding-top: 1rem; border-top: 1px solid var(--divider); }
+      .masthead { grid-template-columns: 1fr; }
+      .masthead-meta { align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .masthead { padding: 3rem 0 2.5rem; }
+      .topbar-inner { padding: 0 1.25rem; }
+      .shell { padding: 0 1.25rem 5rem; }
+      .exp-header { grid-template-columns: 1fr; gap: 0.2rem; }
+      .btn-ghost { display: none; }
+      .wordmark { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <span class="wordmark">Kostadin <span>Radkov</span></span>
+      <nav class="nav-actions" aria-label="Page actions">
+        <button class="btn-ghost" data-theme-toggle aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          Theme
+        </button>
+        <button class="btn-download" id="pdfBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="cv-content">
+    <div class="shell">
+
+      <!-- MASTHEAD -->
+      <section class="masthead" aria-label="Name and title">
+        <div>
+          <h1 class="masthead-name">Kostadin<br><em>Radkov</em></h1>
+          <p class="masthead-title">Chief Integrity &amp; Control Officer &nbsp;·&nbsp; iGaming &nbsp;·&nbsp; Compliance &nbsp;·&nbsp; Business Analysis</p>
+          <p class="masthead-summary">
+            Analytical executive with 15+ years of experience across iGaming operations, regulatory compliance, international expansion, and business intelligence. A track record of building governance structures, leading cross-border market entry, and delivering data-driven insight at the operational and strategic level.
+          </p>
+        </div>
+        <aside class="masthead-meta" aria-label="Contact details">
+          <div class="meta-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Sofia, Bulgaria
+          </div>
+          <div class="meta-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.76h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 5.69 5.69l1.7-1.71a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.09z"/></svg>
+            <a href="tel:+359887020009">+359 887 020 009</a>
+          </div>
+          <div class="meta-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:Radkov@mail.com">Radkov@mail.com</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- BODY GRID -->
+      <div class="body-grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main-col">
+
+          <!-- EXPERIENCE -->
+          <section aria-label="Professional experience">
+            <p class="section-label">Professional Experience</p>
+            <div class="experience">
+
+              <!-- INBET -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Chief Integrity and Control Officer</h2>
+                  <span class="exp-period">Mar 2025 — Present</span>
+                </div>
+                <p class="exp-company">Inbet</p>
+                <ul class="exp-list">
+                  <li>Directed international expansion across Mexico and Peru, covering corporate structure, licensing, and full operational implementation.</li>
+                  <li>Developed company frameworks including administrative setup, banking processes, and post-launch operational oversight.</li>
+                  <li>Led headhunting and organizational development to build local management capability and operational control in new markets.</li>
+                  <li>Established and monitored KPIs, EBITDA performance, transfer flows, financing activities, and tax compliance frameworks.</li>
+                  <li>Coordinated HQ and new-market teams to execute knowledge transfer, process establishment, and structural alignment across jurisdictions.</li>
+                  <li>Provided pre- and post-operational governance support to ensure stable rollout, integrity, and business continuity.</li>
+                </ul>
+              </article>
+              <div class="exp-divider"></div>
+
+              <!-- SMARTICO -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Business Analyst</h2>
+                  <span class="exp-period">Sep 2024 — Mar 2025</span>
+                </div>
+                <p class="exp-company">Smartico</p>
+                <ul class="exp-list">
+                  <li>Served as the sole Business Analyst, taking ownership of data streamlining and organisation across the business.</li>
+                  <li>Led the implementation of open-source DBT to improve data transformation, structure, and scalability across the analytics stack.</li>
+                  <li>Successfully introduced Lightdash into the product, enabling structured dashboarding and more effective business analysis.</li>
+                  <li>Worked directly with the CTO to translate business requirements into practical data solutions and analytical frameworks.</li>
+                  <li>Leveraged extensive online gambling industry experience to deliver actionable client-facing insights and measurable analytical value.</li>
+                </ul>
+              </article>
+              <div class="exp-divider"></div>
+
+              <!-- E-CARD HEAD -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Head of Business Analysis and Compliance</h2>
+                  <span class="exp-period">2020 — 2024</span>
+                </div>
+                <p class="exp-company">E-CARD Ltd. · Sofia, Bulgaria</p>
+                <ul class="exp-list">
+                  <li>Established and led a professional team in the gambling industry focused on compliance, certification, and business analysis.</li>
+                  <li>Managed certification, licensing, and regulatory representation of the 7777Gaming brand with over 100 games certified in regulated markets.</li>
+                  <li>Oversaw betting platform alignment, testing, and certification processes across multiple jurisdictions.</li>
+                  <li>Held ISMS Manager responsibility for ISO 27001 and served as a certified internal auditor.</li>
+                  <li>Managed all AML, due diligence, and KYC procedures, acting as point of contact for government officials.</li>
+                </ul>
+              </article>
+              <div class="exp-divider"></div>
+
+              <!-- E-CARD PM -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Product Manager &amp; Business Analyst</h2>
+                  <span class="exp-period">2016 — 2020</span>
+                </div>
+                <p class="exp-company">E-CARD Ltd. / National Lottery · Sofia, Bulgaria</p>
+                <ul class="exp-list">
+                  <li>Contributed to the scratch ticket development and distribution programme as part of the key operations team.</li>
+                  <li>Managed final order review, shipment tracking, government liaison, and customs checks representation.</li>
+                  <li>Led data aggregation, analysis, and model design to improve overall revenue and brand recognition.</li>
+                  <li>Achieved ISO 27001 certification for three companies and secured SCS certification for the World Lottery Association.</li>
+                  <li>Assisted in the Moldavian National Lottery rebranding and the rollout of a market-ready platform.</li>
+                </ul>
+              </article>
+              <div class="exp-divider"></div>
+
+              <!-- SENIOR SUPPORT -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Senior Support Specialist</h2>
+                  <span class="exp-period">2011 — 2016</span>
+                </div>
+                <p class="exp-company">E-CARD Ltd. / National Lottery · Sofia, Bulgaria</p>
+                <ul class="exp-list">
+                  <li>Supported the development of the National Lottery brand in Bulgaria through client and technical communication leadership.</li>
+                  <li>Helped establish and diversify the first-contact team into dedicated client, customer, and technical support units.</li>
+                  <li>Conducted market research and analysis with a focus on brand recognition and customer retention.</li>
+                  <li>Held the role of Facility Manager and Chief Security Officer.</li>
+                </ul>
+              </article>
+              <div class="exp-divider"></div>
+
+              <!-- BOR -->
+              <article class="exp-item">
+                <div class="exp-header">
+                  <h2 class="exp-role">Project Manager</h2>
+                  <span class="exp-period">2008 — 2011</span>
+                </div>
+                <p class="exp-company">BOR Client Operations AMS · Sofia, Bulgaria</p>
+                <ul class="exp-list">
+                  <li>Led online marketing research projects for international clients including Unilever, BP, Bank of America, Citibank, AT&amp;T, and the United States Marine Corps.</li>
+                </ul>
+              </article>
+
+            </div>
+          </section>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side-col" aria-label="Skills, education, and certifications">
+
+          <section class="sidebar-block">
+            <p class="side-title">Core competencies</p>
+            <div class="skills-grid">
+              <span class="skill-tag">Compliance &amp; Regulatory</span>
+              <span class="skill-tag">International Expansion</span>
+              <span class="skill-tag">Business Analysis</span>
+              <span class="skill-tag">Licensing</span>
+              <span class="skill-tag">Operational Structuring</span>
+              <span class="skill-tag">AML / KYC</span>
+              <span class="skill-tag">ISO 27001 Audit</span>
+              <span class="skill-tag">KPI &amp; EBITDA Tracking</span>
+              <span class="skill-tag">Data Transformation</span>
+              <span class="skill-tag">Dashboarding</span>
+              <span class="skill-tag">Cross-functional Leadership</span>
+              <span class="skill-tag">Team Building</span>
+              <span class="skill-tag">Financial Oversight</span>
+              <span class="skill-tag">Due Diligence</span>
+            </div>
+          </section>
+
+          <section class="sidebar-block">
+            <p class="side-title">Education</p>
+            <div class="edu-item">
+              <p class="edu-degree">Marketing (B.S.)</p>
+              <p class="edu-school">D. A. Tsenov Academy of Economics</p>
+              <p class="edu-years">2010 — 2014</p>
+            </div>
+          </section>
+
+          <section class="sidebar-block">
+            <p class="side-title">Certification</p>
+            <div>
+              <p class="cert-name">Information Security Management</p>
+              <p class="cert-body">Bureau Veritas · Professional Certification</p>
+              <p class="cert-id">Credential ID: SOF/17/0848/02</p>
+            </div>
+          </section>
+
+          <section class="sidebar-block">
+            <p class="side-title">Profile</p>
+            <p class="profile-text">
+              Highly systematic and analytically rigorous. Combines deep understanding of compliance and risk management with hands-on expertise in data architecture, business intelligence, and international market operations. Consistently drives organisational success by aligning strategy with regulatory requirements and leveraging data to optimise and scale operations.
+            </p>
+          </section>
+
+        </aside>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer-strip" aria-label="Page footer">
+        <p class="footer-note">© 2026 Kostadin Radkov &nbsp;·&nbsp; Sofia, Bulgaria &nbsp;·&nbsp; Radkov@mail.com</p>
+        <button class="btn-download" id="pdfBtnFooter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </button>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function () {
+      const root = document.documentElement;
+      const btn  = document.querySelector('[data-theme-toggle]');
+      let theme  = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+
+      const icons = {
+        dark:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+        light: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+      };
+      const syncBtn = () => {
+        if (!btn) return;
+        btn.innerHTML = icons[theme === 'dark' ? 'light' : 'dark'] + ' Theme';
+        btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      };
+      syncBtn();
+      btn?.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        syncBtn();
+      });
+    })();
+
+    /* ── PDF export ── */
+    async function exportPdf() {
+      const btns = document.querySelectorAll('#pdfBtn, #pdfBtnFooter');
+      btns.forEach(b => { b.disabled = true; b.style.opacity = '0.55'; });
+      document.body.classList.add('pdf-active');
+      const prev = document.title;
+      document.title = 'Kostadin-Radkov-CV';
+      try {
+        await html2pdf()
+          .set({
+            margin: [10, 12, 10, 12],
+            filename: 'Kostadin-Radkov-CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak: { mode: ['css', 'legacy'] }
+          })
+          .from(document.getElementById('cv-content'))
+          .save();
+      } catch(e) {
+        alert('PDF generation failed. Use browser print (Ctrl/Cmd+P → Save as PDF) as a fallback.');
+        console.error(e);
+      } finally {
+        document.title = prev;
+        document.body.classList.remove('pdf-active');
+        btns.forEach(b => { b.disabled = false; b.style.opacity = ''; });
+      }
+    }
+    document.getElementById('pdfBtn')?.addEventListener('click', exportPdf);
+    document.getElementById('pdfBtnFooter')?.addEventListener('click', exportPdf);
+  </script>
+</body>
+</html>
