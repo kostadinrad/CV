@@ -419,13 +419,64 @@
     ───────────────────────────────────────────── */
     .pdf-active .topbar,
     .pdf-active .footer-strip { display: none !important; }
-    .pdf-active body { background: #fff; }
     .pdf-active .shell { padding-bottom: 0; }
+
+    /* ── Dark PDF theme ── */
+    .pdf-active body {
+      background: #1a1814 !important;
+    }
+    .pdf-active,
+    .pdf-active .shell {
+      background: #1a1814 !important;
+    }
+    .pdf-active .masthead {
+      border-bottom-color: rgba(255,255,255,0.10) !important;
+    }
+    .pdf-active .masthead-name { color: #ebe7de !important; }
+    .pdf-active .masthead-name em { color: #d4a820 !important; }
+    .pdf-active .masthead-title { color: #857f73 !important; }
+    .pdf-active .masthead-summary { color: #cec9bc !important; }
+    .pdf-active .meta-row { color: #cec9bc !important; }
+    .pdf-active .section-label { color: #857f73 !important; }
+    .pdf-active .section-label::after { background: rgba(255,255,255,0.10) !important; }
+    .pdf-active .exp-role { color: #ebe7de !important; }
+    .pdf-active .exp-period { color: #857f73 !important; }
+    .pdf-active .exp-company { color: #4fa9b0 !important; }
+    .pdf-active .exp-list li { color: #b8b3a8 !important; }
+    .pdf-active .exp-list li::before { background: #d4a820 !important; }
+    .pdf-active .exp-divider { background: rgba(255,255,255,0.08) !important; }
+    .pdf-active .side-title { color: #857f73 !important; }
+    .pdf-active .skill-tag {
+      color: #cec9bc !important;
+      border-color: rgba(255,255,255,0.10) !important;
+      background: #25231f !important;
+    }
+    .pdf-active .edu-degree { color: #ebe7de !important; }
+    .pdf-active .edu-school,
+    .pdf-active .edu-years { color: #857f73 !important; }
+    .pdf-active .cert-name { color: #ebe7de !important; }
+    .pdf-active .cert-body,
+    .pdf-active .cert-id { color: #857f73 !important; }
+    .pdf-active .profile-text { color: #b8b3a8 !important; }
+    .pdf-active .sidebar-block + .sidebar-block { border-top-color: rgba(255,255,255,0.08) !important; }
+    .pdf-active .body-grid { background: #1a1814 !important; }
 
     @media print {
       .topbar, .footer-strip { display: none !important; }
-      body { background: #fff; }
+      body, .shell { background: #1a1814 !important; }
       .shell { padding-bottom: 0; max-width: 100%; }
+      .masthead-name { color: #ebe7de !important; }
+      .masthead-name em { color: #d4a820 !important; }
+      .masthead-title,
+      .masthead-summary,
+      .meta-row,
+      .exp-list li,
+      .profile-text { color: #cec9bc !important; }
+      .exp-role, .edu-degree, .cert-name { color: #ebe7de !important; }
+      .exp-company { color: #4fa9b0 !important; }
+      .section-label, .side-title, .edu-school,
+      .edu-years, .cert-body, .cert-id, .exp-period { color: #857f73 !important; }
+      .skill-tag { color: #cec9bc !important; background: #25231f !important; border-color: rgba(255,255,255,0.10) !important; }
     }
 
     /* ─────────────────────────────────────────────
@@ -700,6 +751,9 @@
     async function exportPdf() {
       const btns = document.querySelectorAll('#pdfBtn, #pdfBtnFooter');
       btns.forEach(b => { b.disabled = true; b.style.opacity = '0.55'; });
+      // Force dark theme for PDF export so background renders correctly
+      const prevTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', 'dark');
       document.body.classList.add('pdf-active');
       const prev = document.title;
       document.title = 'Kostadin-Radkov-CV';
@@ -709,7 +763,7 @@
             margin: [10, 12, 10, 12],
             filename: 'Kostadin-Radkov-CV.pdf',
             image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, backgroundColor: '#000000' },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: '#1a1814' },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
             pagebreak: { mode: ['css', 'legacy'] }
           })
@@ -721,6 +775,7 @@
       } finally {
         document.title = prev;
         document.body.classList.remove('pdf-active');
+        document.documentElement.setAttribute('data-theme', prevTheme || 'light');
         btns.forEach(b => { b.disabled = false; b.style.opacity = ''; });
       }
     }
